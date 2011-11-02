@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 export TERM=xterm-256color
 
 alias ll='ls -l'
