@@ -12,12 +12,10 @@ alias b='sudo'
 alias x='startx'
 alias compiz='SKIP_CHECKS=yes LIBGL_ALWAYS_INDIRECT=1 INTEL_BATCH=1 compiz --replace --indirect-rendering &'
 alias white='aterm -fg black -bg white +sb &'
-function trim() { curl -u Polygonum_sp:myp2ss http://api.tr.im/api/trim_url.json?url=$*; echo -e "\n"; }
 
 # lolcat is awesome
 function ls () { /bin/ls $* |lolcat; }
 function cat () { lolcat $*; }
-
 
 #tunage
 function burn () 
