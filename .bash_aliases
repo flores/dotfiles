@@ -47,21 +47,21 @@ alias bitch_f='ssh root@10.72.100.12'
 alias bitch_m='ssh root@10.72.100.13'
 
 #vps
-alias wet='ssh lo@wet.petalphile.com'
-alias vd='ssh root@p.stellatus.petalphile.com'
-alias burst='ssh root@downoi.petalphile.com'
-alias tonina='ssh root@tonina.petalphile.com'
+alias wet='ssh lo@wet.somepersonaldomain.com'
+alias vd='ssh root@p.stellatus.somepersonaldomain.com'
+alias burst='ssh root@downoi.somepersonaldomain.com'
+alias tonina='ssh root@tonina.somepersonaldomain.com'
 
-function sync_p () { for i in burst p.stellatus wet; do rsync -azv $* root@$i.petalphile.com:/var/www/logs/images/; rsync -azv $* root@$i.petalphile.com:/var/www2/logs/images/; done; }
+function sync_p () { for i in burst p.stellatus wet; do rsync -azv $* root@$i.somepersonaldomain.com:/var/www/logs/images/; rsync -azv $* root@$i.somepersonaldomain.com:/var/www2/logs/images/; done; }
 
 #work
-function go () { ssh root@$* || ssh root@$*\.writeonglass.com || ssh root@$*\.borderstylo.com || ssh root@$*\.borderstylo.int || ssh root@$*\.retrollectapp.com; }
+function go () { ssh root@$* || ssh root@$*\.someotherworkplace.com || ssh root@$*\.someworkplace.com || ssh root@$*\.someworkplace.int || ssh root@$*\.retrollectapp.com; }
 
-function qa () { ssh -i ~/.ssh/west-qa.pem root@$*\.writeonglass.com; }
-function ec2 () { ssh -i ~/.ssh/east-ec2.pem root@$*\.writeonglass.com; }
-function wc2 () { ssh -i ~/.ssh/west-ec2.pem root@$*\.writeonglass.com; }
-function esync () { rsync -e 'ssh -i ~/.ssh/east-ec2.pem' -azv $1 root@$2\.writeonglass.com:manual_sync; }
-function wsync () { rsync -e 'ssh -i ~/.ssh/west-ec2.pem' -azv $1 root@$2\.writeonglass.com:manual_sync; }
+function qa () { ssh -i ~/.ssh/west-qa.pem root@$*\.someotherworkplace.com; }
+function ec2 () { ssh -i ~/.ssh/east-ec2.pem root@$*\.someotherworkplace.com; }
+function wc2 () { ssh -i ~/.ssh/west-ec2.pem root@$*\.someotherworkplace.com; }
+function esync () { rsync -e 'ssh -i ~/.ssh/east-ec2.pem' -azv $1 root@$2\.someotherworkplace.com:manual_sync; }
+function wsync () { rsync -e 'ssh -i ~/.ssh/west-ec2.pem' -azv $1 root@$2\.someotherworkplace.com:manual_sync; }
 alias ec2_scp='scp -i ~/.ssh/east-ec2.pem '
 
 #wireless
