@@ -6,6 +6,11 @@
 # the default umask is set in /etc/login.defs
 #umask 022
 
+#load all my keys
+for i in `~/.ssh/*pem`; do
+        ssh-add $i
+done
+
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
