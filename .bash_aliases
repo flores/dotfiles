@@ -19,7 +19,7 @@ function ls () { /bin/ls $* |lolcat; }
 function cat () { lolcat $*; }
 
 # the only acceptable way to wall is with cowsay
-function wall () { /bin/echo $* |/usr/local/bin/cowsay |/usr/bin/wall }
+function wall () { /bin/echo $* |/usr/local/bin/cowsay |/usr/bin/wall; }
 
 #tunage
 function burn () 
