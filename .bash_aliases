@@ -1,3 +1,6 @@
+# some of the real juicy stuff is here
+source ~/.bash_aliases_private
+
 export TERM=xterm-256color
 
 alias ll='ls -l'
@@ -15,6 +18,9 @@ alias white='aterm -fg black -bg white +sb &'
 function ls () { /bin/ls $* |lolcat; }
 function cat () { lolcat $*; }
 
+# the only acceptable way to wall is with cowsay
+function wall () { /bin/echo $* |/usr/local/bin/cowsay |/usr/bin/wall }
+
 #tunage
 function burn () 
 { 
@@ -27,11 +33,6 @@ function burn ()
 }
 function get () { rsync -azv lo@stash.crib:tunage/$* ~/tunage; }
 function put () { rsync -azv ~/tunage/$* lo@stash.crib:tunage; }
-
-#load all my keys
-for i in `~/.ssh/*pem`; do
-	ssh-add $i
-done
 
 #crib
 function to() { ssh lo@$*; }
@@ -62,7 +63,6 @@ alias ec2_scp='scp -i ~/.ssh/east-ec2.pem '
 
 #wireless
 alias scan='sudo iwlist ath0 scanning'
-alias fonality='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid fonality_support key abba66abba; sleep 2; sudo dhclient ath0'
 alias crib='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_up channel 2 key none; sudo dhclient ath0'
 alias back='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_back channel 2 key none; sudo dhclient ath0'
 alias front='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_front channel 2 key none; sudo dhclient ath0'
