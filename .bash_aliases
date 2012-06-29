@@ -15,8 +15,7 @@ alias compiz='SKIP_CHECKS=yes LIBGL_ALWAYS_INDIRECT=1 INTEL_BATCH=1 compiz --rep
 alias white='aterm -fg black -bg white +sb &'
 
 # lolcat is awesome
-function ls () { /bin/ls $* |lolcat; }
-function cat () { lolcat $*; }
+function lols () { /bin/ls $* |lolcat; }
 
 # the only acceptable way to wall is with cowsay
 function wall () { /bin/echo $* |/usr/local/bin/cowsay |/usr/bin/wall; }
@@ -63,13 +62,10 @@ alias ec2_scp='scp -i ~/.ssh/east-ec2.pem '
 
 #wireless
 alias scan='sudo iwlist ath0 scanning'
-alias crib='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_up channel 2 key none; sudo dhclient ath0'
-alias back='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_back channel 2 key none; sudo dhclient ath0'
-alias front='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwconfig ath0 essid kenandbev_front channel 2 key none; sudo dhclient ath0'
 alias roam='sudo ifconfig eth0 down; sudo ifconfig ath0 up && sudo iwlist ath0 scanning'
 alias tether='sudo ifconfig ath0 down; sudo iwconfig ath0 mode ad-hoc; sudo iwconfig ath0 essid "pie"; sudo ifconfig ath0 up; sudo ifconfig ath0 1.2.3.4'
 
-# battery
+# thinkpad battery
 
 alias bat='sudo /etc/init.d/sysklogd stop; 
 	sudo /etc/init.d/bluetooth stop;
