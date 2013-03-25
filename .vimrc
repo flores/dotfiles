@@ -1,6 +1,6 @@
-set cindent
-set smartindent
-set autoindent
+"set cindent
+"set smartindent
+"set autoindent
 set softtabstop=2
 set shiftwidth=2
 
