@@ -3,6 +3,7 @@
 "set autoindent
 set softtabstop=2
 set shiftwidth=2
+set colorcolumn=80
 
 syntax enable
 filetype plugin on
