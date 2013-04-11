@@ -12,4 +12,5 @@ filetype indent on
 set ignorecase
 set magic
 
-
+set background=light
+color desert
