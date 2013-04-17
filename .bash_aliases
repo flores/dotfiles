@@ -1,7 +1,7 @@
 # some of the real juicy stuff is here
 source ~/.bash_aliases_private
 
-export TERM=xterm-256color
+export TERM="xterm-256color"
 
 alias ll='ls -l'
 #alias la='ls -A'
