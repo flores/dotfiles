@@ -17,4 +17,4 @@ set ignorecase
 set magic
 
 set background=light
-color desert
+color rainbow_autumn
