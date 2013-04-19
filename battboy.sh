@@ -7,10 +7,10 @@
 
 # wip
 
-path="/sys/class/power_supply"
+path="/sys/devices/platform/smapi"
 batts="BAT0 BAT1"
 threshold="15" # when to flip it
-ac=$(cat $path/AC/online) # are we plugged in?
+ac=$(cat $path/ac_connected) # are we plugged in?
 
 lockfile="/tmp/batboy" # make it cronable
 
@@ -21,25 +21,24 @@ fi
 
 for batt in $batts; do
 
-  if [ -d $path/$batt ]; then
-    energy_now=$(cat $path/$batt/energy_now)
-    energy_full=$(cat $path/$batt/energy_full)
-    energy_per=$(($energy_now * 100 /$energy_full))
+if [ -d $path/$batt ]; then
+  energy_per=$(cat $path/$batt/remaining_percent)
 
-    if [ $energy_per -lt $threshold ]; then
-      if [ $ac -eq 0 ]; then
-	echo "$batt less than $threshold percent!  flipping it off, sorry"
-	echo "$batt " >> $lockfile
-      else
-	echo "we're still charging $batt."
-      fi
+  if [ $energy_per -lt $threshold ]; then
+    if [ $ac -eq 0 ]; then
+      echo "$batt less than $threshold percent!  flipping it off, sorry"
+      echo "$batt " >> $lockfile
+      echo 0 > $path/$batt/force_discharge
     else
-      if [ $ac -eq 0 ]; then
-	echo cool $batt still at $energy_per percent
-      else
-	rm -f $lockfile
-      fi
+      echo "we're still charging $batt."
     fi
+  else
+    if [ $ac -eq 0 ]; then
+      echo cool $batt still at $energy_per percent
+    else
+      rm -f $lockfile
+    fi
+  fi
 
   else
     echo "no $batt found"
