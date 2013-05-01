@@ -115,7 +115,7 @@ alias maxbat='sudo /etc/init.d/sysklogd stop;
  	sudo ifconfig eth0 down;
 	echo 3000 |sudo tee /proc/sys/vm/dirty_writeback_centisecs'
 
-alias sleep='                                                                   
+alias lock='                                                                   
   if uname -a |grep -q Darwin; then #this is an osx box                         
     open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app
   else                                                                          
