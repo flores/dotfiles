@@ -25,7 +25,7 @@ perl -pi -e "s/somepersonaldomain.com/$somepersonaldomain/g" $workingdir/*
 perl -pi -e "s/someworkplace.com/$someworkplace/g" $workingdir/*
 
 # push it home
-for dotfile in .bashrc .bash_aliases .vimrc .vim .config
+for dotfile in .bashrc .bash_aliases .vimrc .vim .config .inputrc
 do
   cp -r $workingdir/$dotfile $HOME
 done
