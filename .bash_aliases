@@ -119,6 +119,6 @@ alias lock='
   if uname -a |grep -q Darwin; then #this is an osx box                         
     open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app
   else                                                                          
-    xscreensaver-command -lock                                                  
+    xscreensaver-command -l
   fi                                                                            
 '
