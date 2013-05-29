@@ -1,0 +1,9 @@
+
+pcm.builtin { type hw; card Intel; }
+ctl.builtin { type hw; card Intel; }
+
+pcm.usb { type hw; card USBDEVICE; }
+ctl.usb { type hw; card USBDEVICE; }
+
+pcm.!default pcm.usb
+ctl.!default ctl.usb
