@@ -42,6 +42,9 @@ alias bitch_b='ssh root@10.72.100.11'
 alias bitch_f='ssh root@10.72.100.12'
 alias bitch_m='ssh root@10.72.100.13'
 
+# rotating monitor
+function mon() { xrandr --output VGA1 --rotate $1; }
+
 #vps
 alias wet='ssh lo@wet.somepersonaldomain.com'
 alias vd='ssh root@p.stellatus.somepersonaldomain.com'
@@ -51,6 +54,8 @@ alias tonina='ssh root@tonina.somepersonaldomain.com'
 function sync_p () { for i in burst p.stellatus wet; do rsync -azv $* root@$i.somepersonaldomain.com:/var/www/logs/images/; rsync -azv $* root@$i.somepersonaldomain.com:/var/www2/logs/images/; done; }
 
 #work
+alias vpn='cd ~/workvpn; sudo openvpn client.ovpn'
+
 function go () { ssh root@$* || ssh root@$*\.someotherworkplace.com || ssh root@$*\.someworkplace.com || ssh root@$*\.someworkplace.int || ssh root@$*\.retrollectapp.com; }
 
 function qa () { ssh -i ~/.ssh/west-qa.pem root@$*\.someotherworkplace.com; }
