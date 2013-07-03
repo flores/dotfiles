@@ -1,4 +1,3 @@
-
 pcm.builtin { type hw; card Intel; }
 ctl.builtin { type hw; card Intel; }
 
