@@ -18,3 +18,6 @@ set magic
 
 set background=light
 color rainbow_autumn
+
+highlight RedundantWhitespace ctermbg=red guibg=red
+match RedundantWhitespace /\s\+$\|\t/
