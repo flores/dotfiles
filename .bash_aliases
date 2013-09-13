@@ -1,5 +1,7 @@
 # some of the real juicy stuff is here
-source ~/.bash_aliases_private
+if [[ -e ~/.bash_aliases_private ]]; then
+  source ~/.bash_aliases_private
+fi
 
 export TERM="xterm-256color"
 

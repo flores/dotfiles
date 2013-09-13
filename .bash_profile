@@ -6,10 +6,15 @@
 # the default umask is set in /etc/login.defs
 #umask 022
 
-#load all my keys
-for i in `~/.ssh/*pem`; do
-        ssh-add $i
-done
+#load all my cloudkeys
+keys=$( find ~/.ssh -name *pem )
+
+if [[ -n "${keys[@]}" ]]; then
+  eval `ssh-agent -s`
+  for i in "${keys[@]}"; do
+    ssh-add $i
+  done
+fi
 
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
