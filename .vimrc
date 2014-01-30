@@ -11,10 +11,8 @@ endif
 
 syntax enable
 filetype plugin on
-filetype indent on
 
 set ignorecase
-set magic
 
 set background=light
 color rainbow_autumn
